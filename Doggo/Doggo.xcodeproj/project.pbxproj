@@ -505,6 +505,7 @@
 				73570D981E58422100DC467F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73570D991E58422100DC467F /* Build configuration list for PBXNativeTarget "DoggoTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +514,7 @@
 				73570D9B1E58422100DC467F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73570D9C1E58422100DC467F /* Build configuration list for PBXNativeTarget "DoggoUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +523,7 @@
 				73570D9E1E58422100DC467F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -46,6 +46,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="bs5-KH-Xge" id="BbG-Gl-aHu"/>
+                        <outlet property="picViewer" destination="bs5-KH-Xge" id="oaF-yD-Zbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

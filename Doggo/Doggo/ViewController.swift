@@ -10,13 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
-    @IBOutlet weak var imageView: UIImageView!
-    let imagePicker = UIImagePickerController()
+    @IBOutlet weak var picViewer: UIImageView!
+    let picViewerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        imagePicker.delegate = self;
+        picViewerController.delegate = self;
         //let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.ImageTap))
     }
 
@@ -26,21 +26,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     @IBAction func photoFromLibrary(_ sender: UIBarButtonItem) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-        imagePicker.modalPresentationStyle = .popover
-        present(imagePicker, animated: true, completion: nil)
-        imagePicker.popoverPresentationController?.barButtonItem = sender
+        picViewerController.allowsEditing = false
+        picViewerController.sourceType = .photoLibrary
+        picViewerController.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        picViewerController.modalPresentationStyle = .popover
+        present(picViewerController, animated: true, completion: nil)
+        picViewerController.popoverPresentationController?.barButtonItem = sender
     }
     
     @IBAction func shootPhoto(_ sender: UIBarButtonItem) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.allowsEditing = false
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-            imagePicker.cameraCaptureMode = .photo
-            imagePicker.modalPresentationStyle = .fullScreen
-            present(imagePicker,animated: true,completion: nil)
+            picViewerController.allowsEditing = false
+            picViewerController.sourceType = UIImagePickerControllerSourceType.camera
+            picViewerController.cameraCaptureMode = .photo
+            picViewerController.modalPresentationStyle = .fullScreen
+            present(picViewerController,animated: true,completion: nil)
         } else {
             noCamera()
         }
@@ -64,7 +64,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let picker = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.image = picker
+            picViewer.image = picker
         }
         dismiss(animated: true, completion:nil)
     }
